@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#topbar {
+    width: 100%;
+    background: #0f1724;
+    padding: 10px 30px;
+    border-bottom: 1px solid #2a3a50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 1001;
+}
+
+#topbar h1 {
+    font-size: 20px;
+    color: #4ecca3;
+    font-weight: 600;
+}
+
+#topbar p {
+    font-size: 13px;
+    color: #9aacbd;
+    margin-top: 2px;
+}
+
+#topTitleArea {
+    display: flex;
+    flex-direction: column;
+}
+
+#topButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.topBtn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #2a3a50;
+    background: #1a2535;
+    color: #e0e0e0;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: auto;
+}
+
+.topBtn:hover {
+    background: #4ecca3;
+    color: #0f1724;
+    border-color: #4ecca3;
+}
+
+.topBtn.active {
+    background: #4ecca3;
+    color: #0f1724;
+    border-color: #4ecca3;
+    font-weight: 600;
+}
+#main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 340px;
+    min-width: 340px;
+    height: 100%;
+    background: #0f1724;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1000;
+    border-right: 1px solid #2a3a50;
+}
+
+#controls {
+    padding: 16px 20px;
+    border-bottom: 1px solid #2a3a50;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+select {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #2a3a50;
+    background: #1a2535;
+    color: #e0e0e0;
+    font-size: 13px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button {
+    padding: 9px;
+    border-radius: 6px;
+    border: none;
+    background: #4ecca3;
+    color: #0f1724;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #38b28a;
+}
+
+#areaInfo {
+    padding: 16px 20px;
+    border-bottom: 1px solid #2a3a50;
+    flex: 1;
+}
+
+#areaInfo .placeholder {
+    color: #8ea3b8;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aqi-badge {
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+.aqi-badge .aqi-number {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.aqi-badge .aqi-label {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.85;
+}
+
+.aqi-badge .city-name {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    margin-bottom: 12px;
+}
+
+.metric-card {
+    background: #1a2535;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.metric-card .metric-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4ecca3;
+}
+
+.metric-card .metric-name {
+    font-size: 10px;
+    color: #7a8a9a;
+    margin-top: 2px;
+}
+
+.aqi-legend {
+    margin-top: 12px;
+}
+
+.aqi-legend p {
+    font-size: 11px;
+    color: #7a8a9a;
+    margin-bottom: 6px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.updated-text {
+    font-size: 10px;
+    color: #5a6a7a;
+    margin-top: 10px;
+}
+
+.nearest-warning {
+    font-size: 11px;
+    color: #f0a500;
+    margin-bottom: 10px;
+}
+
+#reports {
+    padding: 16px 20px;
+}
+
+#reports h3 {
+    font-size: 13px;
+    color: #4ecca3;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.report-item {
+    background: #7094c9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #a0b0c0;
+}
+
+#map {
+    flex: 1;
+    height: 100%;
+}
+#rightPanel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;  
+}
+
+#map {
+    height: calc(100vh - 60px);  
+    min-height: calc(100vh - 60px);
+    flex-shrink: 0;  
+}
+
+.report-card {
+    background: #1a3a2a;        
+    border-radius: 10px;
+    padding: 18px;
+    min-width: 220px;
+    min-height: 20x;
+    max-width: 4000px;
+    font-size: 14px;
+    color: #499249;
+    border: 1px solid #2a5a3a;  
+    flex-shrink: 0;
+}
+
+.report-card .report-city {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4ecca3;             
+    margin-bottom: 6px;
+}
+
+.report-card .report-aqi {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #f1f1f1;
+}
+
+.report-card .report-summary {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #bdd6bd;
+}
+
+.report-card .report-time {
+    font-size: 13px;
+    color: #5a8a6a;
+    margin-top: 8px;
+}
